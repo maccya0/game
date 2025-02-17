@@ -50,3 +50,16 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+Game/.vs/Game/v16/.suo
+Game/.vs/Game/v16/Browse.VC.db
+Game/.vs/Game/v16/ipch/AutoPCH/1cde795f81c43b66/ACTOR.ipch
+Game/.vs/Game/v16/ipch/AutoPCH/2fffd49cb36737c0/RENDER.ipch
+Game/.vs/Game/v16/ipch/AutoPCH/8da61ddb31231e82/GAME.ipch
+Game/.vs/Game/v16/ipch/AutoPCH/f5dbd4e561b202c3/ACTOR.ipch
+Game/Game/Debug/Game.log
+Game/Game/Debug/Game.tlog/CL.command.1.tlog
+Game/Game/Debug/Game.tlog/CL.read.1.tlog
+Game/Game/Debug/Game.tlog/CL.write.1.tlog
+Game/Game/Debug/Game.tlog/link.command.1.tlog
+Game/Game/Debug/Game.tlog/link.read.1.tlog
+Game/Game/Debug/Game.tlog/link.write.1.tlog
