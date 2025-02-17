@@ -3,6 +3,7 @@
 #define GAME_H
 #include "Lib.h"
 #include "Render.h"
+#include "Actor.h"
 
 class Game
 {
@@ -15,6 +16,11 @@ class Game
 		bool Initialize();
 		void MainLoop();
 		void ShotDown();
+
+		/* アクターの追加 */
+		void AddActor(class Actor* actor);
+		void RemoveActor(class Actor* actor);
+
 	private:
 
 		/* メインループ関連 */
@@ -24,15 +30,19 @@ class Game
 
 		/* 入力関連 */
 		/* 更新関連 */
+		void UpdateActors(float deltaTime);
 		/* 出力関連 */
 
 		/* メンバー変数 */
-		/* ヒープ領域にメモリを確保したいのでポインタ */
-		class Render *mRender;
-	
+		/* ヒープ領域に */
+		class Render        *mRender;       //レンダラー操作用(メモリを確保したいのでポインタ)
+		std::vector<class Actor*> mActiveActors;  //アクティブなアクター(アクターとゲームクラスは相互にデータを参照したいのでポインタ)
+		std::vector<class Actor*> mIdleActors;    //待ち状態なアクター
+
 		/* スタック領域 */
-		bool mRunFlag;
-		U32 mTicksCount;
+		bool  mRunFlag;         //実行フラグ
+		U32   mTicksCount;      //実行経過時間
+		bool  mUpdataingActors; //Actor更新中フラグ
 
 
 };

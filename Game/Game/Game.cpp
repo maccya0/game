@@ -9,7 +9,8 @@
 /**********************************/
 Game::Game()
 	:mRender(nullptr),
-	mRunFlag(true)
+	mRunFlag(true),
+	mUpdataingActors(false)
 {
 }
 
@@ -45,6 +46,7 @@ bool Game::Initialize()
 
 	//初期経過時間を設定する
 	mTicksCount = SDL_GetTicks();
+
 	return true;
 }
 /**********************************/
@@ -123,13 +125,13 @@ void Game::Update()
 {
 	//ゲーム内時間の経過を待つ
 	//現在時間が前回経過時間+16ms(60fps相当なので1/60)まで待つ
-	while (!SDL_TICKS_PASSED(SDL_GetTicks(), mTicksCount + 16))
+	while (!SDL_TICKS_PASSED(SDL_GetTicks(), mTicksCount + FLAME_TIME ))
 	{
 		;
 	}
 
 	//Δタイム = (現在時間 - 前回経過時間)msを秒に変換する
-	float deltaTime = (SDL_GetTicks() - mTicksCount) / 1000.0f ;
+	float deltaTime = (SDL_GetTicks() - mTicksCount) / SECOND;
 
 	//最大経過時間を超える用ならばガードする
 	if (deltaTime > MAX_DELTA_TIME)
@@ -139,8 +141,55 @@ void Game::Update()
 
 	//時間経過時間の為にラッチする
 	mTicksCount = SDL_GetTicks();
+
+	//アクターの更新
+	UpdateActors(deltaTime);
 }
 
+/**********************************/
+/*関数名 : UpdateActors           */
+/*戻り値 : 無し                   */
+/*引数   : deltaTime(ゲーム内時間)*/
+/*処理   : アクターの更新処理     */
+/*備考   : 無し                   */
+/**********************************/
+void Game::UpdateActors(float deltaTime)
+{
+	//アクターの更新中にmActiveActorsを操作されるとまずいので
+	//更新中はmActiveActorsの更新を許可しない
+	mUpdataingActors = true;
+	for (auto actor : mActiveActors)
+	{
+		actor->Update(deltaTime);
+	}
+	mUpdataingActors = false;
+
+	for (auto actor : mIdleActors)
+	{
+		//次回更新に向けて待ち状態のアクターをアクティブにする
+		mActiveActors.emplace_back(actor);
+	}
+	//待ち状態のアクターを空にする
+	mIdleActors.clear();
+
+
+	//死亡したアクターのメモリを開放する
+	//mActiveActorsを直接操作したくないので専用の配列を用意して削除する
+	std::vector<class Actor*> deadActors;
+	for (auto actor : mActiveActors)
+	{
+		if (actor->GetActorState() == Actor::Edead)
+		{
+			deadActors.emplace_back(actor);
+		}
+	}
+
+	for (auto actor : deadActors)
+	{
+		delete actor;
+	}
+
+}
 /**********************************/
 /*関数名 : Output                 */
 /*戻り値 : 無し                   */
@@ -154,3 +203,49 @@ void Game::Output()
 }
 
 
+/**************************************/
+/*関数名 : AddActor                   */
+/*戻り値 : 無し                       */
+/*引数   : Actor(ゲーム内オブジェクト)*/
+/*処理   : アクターの追加処理         */
+/*備考   : 無し                       */
+/**************************************/
+void Game::AddActor(Actor* actor)
+{
+
+	//更新中の追加を防ぐ
+	if (mUpdataingActors == true)
+	{
+		mActiveActors.emplace_back(actor);
+	}
+	else
+	{
+		mIdleActors.emplace_back(actor);
+	}
+}
+/**************************************/
+/*関数名 : RemoveActor                */
+/*戻り値 : 無し                       */
+/*引数   : Actor(ゲーム内オブジェクト)*/
+/*処理   : アクターの削除処理         */
+/*備考   : 通常更新以外での削除       */
+/**************************************/
+void Game::RemoveActor(Actor* actor)
+{
+	/* 対象データをスタック末尾に移動してポップする */
+	auto iter = std::find(mIdleActors.begin(), mIdleActors.end(), actor);
+	if (iter != mIdleActors.end())
+	{
+
+		std::iter_swap(iter, mIdleActors.end() - 1);
+		mIdleActors.pop_back();
+	}
+	iter = std::find(mActiveActors.begin(), mActiveActors.end(), actor);
+	if (iter != mActiveActors.end())
+	{
+
+		std::iter_swap(iter, mActiveActors.end() - 1);
+		mActiveActors.pop_back();
+	}
+
+}

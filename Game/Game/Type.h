@@ -17,4 +17,9 @@ typedef std::uint64_t U64;
 /* •‚“®¬”“_Œ^ */
 typedef float   F32;
 typedef double  F64;
+
+#define MS 1.0                      //1ms
+#define SECOND       1000.0         //1s
+#define FPS 60                      //fps
+#define FLAME_TIME  int(SECOND/FPS) //1ƒtƒŒ[ƒ€ŠÔ       
 #endif 
