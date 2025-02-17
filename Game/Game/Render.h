@@ -15,6 +15,7 @@ class Render
 		bool Initialize(S16 width, S16 height);
 	private:
 
-		SDL_Window* mWindow;  //ウィンドウ用のポインタ
+		SDL_Window* mWindow;     //ウィンドウ用のポインタ
+		SDL_GLContext mContext;  //コンテクスト用の変数
 };
 #endif

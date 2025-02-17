@@ -32,6 +32,7 @@ class Game
 	
 		/* スタック領域 */
 		bool mRunFlag;
+		U32 mTicksCount;
 
 
 };
