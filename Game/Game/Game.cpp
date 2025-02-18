@@ -112,6 +112,11 @@ void Game::Input()
 		mRunFlag = false;
 	}
 
+	for (auto iter = mActiveActors.begin() ;  iter< mActiveActors.end() ; iter++)
+	{
+		(*iter)->ActorInput();
+	}
+
 }
 
 /**********************************/
@@ -160,7 +165,7 @@ void Game::UpdateActors(float deltaTime)
 	mUpdataingActors = true;
 	for (auto actor : mActiveActors)
 	{
-		actor->Update(deltaTime);
+		actor->AcotrUpdate(deltaTime);
 	}
 	mUpdataingActors = false;
 

@@ -17,8 +17,10 @@ class Game
 		void MainLoop();
 		void ShotDown();
 
+		/* アクター関連 */
 		/* アクターの追加 */
 		void AddActor(class Actor* actor);
+		/* アクターの削除 */
 		void RemoveActor(class Actor* actor);
 
 	private:

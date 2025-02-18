@@ -18,8 +18,10 @@ typedef std::uint64_t U64;
 typedef float   F32;
 typedef double  F64;
 
+/* ソフトウェア共通パラメータ */
 #define MS 1.0                      //1ms
 #define SECOND       1000.0         //1s
 #define FPS 60                      //fps
-#define FLAME_TIME  int(SECOND/FPS) //1フレーム時間       
+#define FLAME_TIME  int(SECOND/FPS) //1フレーム時間
+#define MAX_UPDATE_ORDER 100
 #endif 

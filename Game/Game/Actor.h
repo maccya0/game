@@ -5,9 +5,6 @@
 class Actor
 {
 	public:
-		//コンストラクタ
-		Actor(class Game* game);
-		~Actor();
 
 		//アクターの状態設定関連
 		enum ActorState
@@ -17,14 +14,30 @@ class Actor
 			Edead
 		};
 		ActorState GetActorState() { return mState; };
+		//コンストラクタ
+		Actor(class Game* game);
+		//デストラクタ
+		~Actor();
+
+		//アクター関連
+		void AcotrUpdate(float deltaTime);
+		void ActorInput();
+		//セッター
 		void SetActorState(ActorState state) { mState = state; };
 
 
-		void Update(float deltaTime);
+		//コンポーネント関連
+		//コンポーネントの追加
+		void AddComponent(class Component* component);
+		//コンポーネントの削除
+		void RemoveComponent(class Component* component);
 
-	private:
+private:
+		//コンポーネントの更新
+		void UpdateComponents(float deltaTime);
 
 		//ヒープ領域
+		std::vector<class Component*> mComponents;
 
 		//スタック領域
 		ActorState mState; //アクターの状態

@@ -13,42 +13,66 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\Component">
+      <UniqueIdentifier>{488062b8-8763-4c92-9411-550d4d7be3ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Lib">
+      <UniqueIdentifier>{e63c1801-7407-413e-9617-4e84d22405cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Source">
+      <UniqueIdentifier>{74e4d315-a169-4e12-975c-b9d9233dce69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Application">
+      <UniqueIdentifier>{9ba7b940-3f0c-486c-a6a6-79022408a96c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Source\Component">
+      <UniqueIdentifier>{e86f24b5-05dd-49f6-81ed-52245b6a71db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Source\Application">
+      <UniqueIdentifier>{1fa3a73b-7a27-4099-8a42-491dc3842c6d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Render.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Component.cpp">
+      <Filter>ソース ファイル\Component</Filter>
     </ClCompile>
     <ClCompile Include="Actor.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>ソース ファイル\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>ソース ファイル\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Render.cpp">
+      <Filter>ソース ファイル\Application</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="Config.h">
+      <Filter>ヘッダー ファイル\Lib</Filter>
     </ClInclude>
     <ClInclude Include="Lib.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Config.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\Lib</Filter>
     </ClInclude>
     <ClInclude Include="Macro.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Render.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\Lib</Filter>
     </ClInclude>
     <ClInclude Include="Type.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>ヘッダー ファイル\Source\Component</Filter>
     </ClInclude>
     <ClInclude Include="Actor.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\Source\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>ヘッダー ファイル\Source\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Render.h">
+      <Filter>ヘッダー ファイル\Source\Application</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
