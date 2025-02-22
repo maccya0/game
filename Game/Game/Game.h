@@ -37,7 +37,7 @@ class Game
 
 		/* メンバー変数 */
 		/* ヒープ領域に */
-		class Render        *mRender;       //レンダラー操作用(メモリを確保したいのでポインタ)
+		class Render        *mRender;             //レンダラー操作用(メモリを確保したいのでポインタ)
 		std::vector<class Actor*> mActiveActors;  //アクティブなアクター(アクターとゲームクラスは相互にデータを参照したいのでポインタ)
 		std::vector<class Actor*> mIdleActors;    //待ち状態なアクター
 

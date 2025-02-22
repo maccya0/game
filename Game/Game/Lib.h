@@ -8,5 +8,6 @@
 #include <string>
 #include <vector>
 #include "Type.h"
+#include "Config.h"
 
 #endif 

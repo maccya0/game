@@ -48,6 +48,12 @@
     <ClCompile Include="Render.cpp">
       <Filter>ソース ファイル\Application</Filter>
     </ClCompile>
+    <ClCompile Include="VertexArray.cpp">
+      <Filter>ソース ファイル\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>ソース ファイル\Application</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h">
@@ -72,6 +78,12 @@
       <Filter>ヘッダー ファイル\Source\Application</Filter>
     </ClInclude>
     <ClInclude Include="Render.h">
+      <Filter>ヘッダー ファイル\Source\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexArray.h">
+      <Filter>ヘッダー ファイル\Source\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
       <Filter>ヘッダー ファイル\Source\Application</Filter>
     </ClInclude>
   </ItemGroup>

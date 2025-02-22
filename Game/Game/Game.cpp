@@ -204,7 +204,7 @@ void Game::UpdateActors(float deltaTime)
 /**********************************/
 void Game::Output()
 {
-
+	mRender->Draw();
 }
 
 

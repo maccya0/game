@@ -93,3 +93,22 @@ bool Render::Initialize(S16 width, S16 height)
 
 	return true;
 }
+
+/**************************************************/
+/*関数名 : Draw                                   */
+/*戻り値 : なし                                   */
+/*引数   : なし                                   */
+/*処理   : 描画                                   */
+/*備考   : 無し                                   */
+/**************************************************/
+void Render::Draw()
+{
+	//グレーでクリアする
+	glClearColor(0.86f, 0.86f, 0.86f, 1.0f);
+	//カラーバッファのクリア
+	glClear(GL_COLOR_BUFFER_BIT);
+
+
+	//バッファの交換
+	SDL_GL_SwapWindow(mWindow);
+}

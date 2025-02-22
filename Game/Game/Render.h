@@ -2,7 +2,6 @@
 #ifndef RENDER_H
 #define RENDER_H
 #include "Lib.h"
-#include "Config.h"
 
 class Render
 {
@@ -13,6 +12,7 @@ class Render
 		~Render();
 
 		bool Initialize(S16 width, S16 height);
+		void Draw();
 	private:
 
 		SDL_Window* mWindow;     //ウィンドウ用のポインタ
