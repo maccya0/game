@@ -4,6 +4,7 @@
 #include "Lib.h"
 #include "Render.h"
 #include "Actor.h"
+#include "Shader.h"
 
 class Game
 {
@@ -25,6 +26,9 @@ class Game
 
 	private:
 
+		/* 初期化関連 */
+		bool LoadShaders();
+
 		/* メインループ関連 */
 		void Input();
 		void Update();
@@ -40,6 +44,7 @@ class Game
 		class Render        *mRender;             //レンダラー操作用(メモリを確保したいのでポインタ)
 		std::vector<class Actor*> mActiveActors;  //アクティブなアクター(アクターとゲームクラスは相互にデータを参照したいのでポインタ)
 		std::vector<class Actor*> mIdleActors;    //待ち状態なアクター
+		class Shader* mSpriteShader;              //シェーダーオブジェクト
 
 		/* スタック領域 */
 		bool  mRunFlag;         //実行フラグ

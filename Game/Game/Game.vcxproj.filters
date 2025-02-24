@@ -31,6 +31,9 @@
     <Filter Include="ヘッダー ファイル\Source\Application">
       <UniqueIdentifier>{1fa3a73b-7a27-4099-8a42-491dc3842c6d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{b3af1eaf-c2df-4f6a-a3df-e395c9d2199f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Component.cpp">
@@ -86,5 +89,21 @@
     <ClInclude Include="Shader.h">
       <Filter>ヘッダー ファイル\Source\Application</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Game.rc">
+      <Filter>リソース ファイル</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\Basic.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\Basic.vert">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -43,12 +43,35 @@ bool Game::Initialize()
 	{
 		return false;
 	}
-
+	LoadShaders();
 	//初期経過時間を設定する
 	mTicksCount = SDL_GetTicks();
 
 	return true;
 }
+
+/**********************************/
+/*関数名 : LoadShaders            */
+/*戻り値 : 無し                   */
+/*引数   : 無し                   */
+/*処理   : シェーダーの読み込み   */
+/*備考   : 無し                   */
+/**********************************/
+bool Game::LoadShaders()
+{
+	
+	mSpriteShader = new Shader();
+
+	if (!mSpriteShader->LoadShader("./Shaders/Basic.vert", "./Shaders/Basic.frag"))
+	{
+		return false;
+	}
+	mSpriteShader->SetShaderActive();
+	
+	return true;
+}
+
+
 /**********************************/
 /*関数名 : MainLoop               */
 /*戻り値 : 無し                   */

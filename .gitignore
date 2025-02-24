@@ -70,3 +70,13 @@ Game/.vs/Game/v16/Browse.VC.opendb
 Game/.vs/Game/v16/ipch/AutoPCH/72c5d997d1bdc4ea/VERTEXXARRAY.ipch
 Game/.vs/Game/v16/ipch/AutoPCH/8bbba2438b2ede1/VERTEXARRAY.ipch
 Game/.vs/Game/v16/ipch/AutoPCH/f29ea554677293d8/VERTEXARRAY.ipch
+Game/Game/Debug/Game.res
+Game/Game/Debug/Game.tlog/fxc.command.1.tlog
+Game/Game/Debug/Game.tlog/fxc.read.1.tlog
+Game/Game/Debug/Game.tlog/rc.command.1.tlog
+Game/Game/Debug/Game.tlog/rc.read.1.tlog
+Game/Game/Debug/Game.tlog/rc.write.1.tlog
+*.aps
+*.rc
+*.h
+*.ipch
