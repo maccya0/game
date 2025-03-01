@@ -159,7 +159,7 @@ void Game::Update()
 	}
 
 	//Δタイム = (現在時間 - 前回経過時間)msを秒に変換する
-	float deltaTime = (SDL_GetTicks() - mTicksCount) / SECOND;
+	F32 deltaTime = (SDL_GetTicks() - mTicksCount) / SECOND;
 
 	//最大経過時間を超える用ならばガードする
 	if (deltaTime > MAX_DELTA_TIME)
@@ -181,7 +181,7 @@ void Game::Update()
 /*処理   : アクターの更新処理     */
 /*備考   : 無し                   */
 /**********************************/
-void Game::UpdateActors(float deltaTime)
+void Game::UpdateActors(F32 deltaTime)
 {
 	//アクターの更新中にmActiveActorsを操作されるとまずいので
 	//更新中はmActiveActorsの更新を許可しない

@@ -9,5 +9,6 @@
 #include <vector>
 #include "Type.h"
 #include "Config.h"
+#include "Math.h"
 
 #endif 

@@ -34,6 +34,9 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{b3af1eaf-c2df-4f6a-a3df-e395c9d2199f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Lib">
+      <UniqueIdentifier>{6cc8bad8-fa25-4648-b033-2ccd0993e3d2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Component.cpp">
@@ -56,6 +59,9 @@
     </ClCompile>
     <ClCompile Include="Shader.cpp">
       <Filter>ソース ファイル\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>Lib</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +97,9 @@
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>ヘッダー ファイル\Lib</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

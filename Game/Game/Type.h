@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 #ifndef TYPE_H
 #define TYPE_H
 #include <cstdint>
@@ -23,5 +22,6 @@ typedef double  F64;
 #define SECOND       1000.0         //1s
 #define FPS 60                      //fps
 #define FLAME_TIME  int(SECOND/FPS) //1フレーム時間
-#define MAX_UPDATE_ORDER 100
+#define MAX_UPDATE_ORDER 100        //更新順初期値
+#define TOLEARANCE_RANGE 0.001f     //誤差許容範囲
 #endif 

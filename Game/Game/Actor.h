@@ -20,7 +20,7 @@ class Actor
 		~Actor();
 
 		//アクター関連
-		void AcotrUpdate(float deltaTime);
+		void AcotrUpdate(F32 deltaTime);
 		void ActorInput();
 		//セッター
 		void SetActorState(ActorState state) { mState = state; };
@@ -34,7 +34,7 @@ class Actor
 
 private:
 		//コンポーネントの更新
-		void UpdateComponents(float deltaTime);
+		void UpdateComponents(F32 deltaTime);
 
 		//ヒープ領域
 		std::vector<class Component*> mComponents;

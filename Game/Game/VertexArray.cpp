@@ -53,7 +53,7 @@ VertexArray::VertexArray(const F32* verts, U16 numVerts, const U16* indices, U16
 			 : データ例 ： | attribute0 | attribute1 | attribute2 | attribute0 | attribute1 | attribute2 |…
 			 :上記のようにデータの塊になっているため第1引数ではその使いたい"attribute"の番号を指定する
 			 :第4引数の要素間の間隔とはつまりattributeの長さになる
-			 :"attribute0"にxyz座標を指定しているので"attribute1"までの長さはfloatのデータサイズ*座標数になる
+			 :"attribute0"にxyz座標を指定しているので"attribute1"までの長さはF32のデータサイズ*座標数になる
 			 :オフセットは指定した"attribute"が先頭からどれだけ離れているかになる
 			 :"attribute1"を第1引数に指定するならばオフセットは"attribute0"分のsizeof(F32)* COODINATE_NUMになる(※ポインター型なので注意)	
 	*/

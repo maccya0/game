@@ -15,7 +15,7 @@ class Component
 		virtual~Component();
 		
 		//XVˆ—
-		virtual void ComponentUpdate(float deltatime) {};
+		virtual void ComponentUpdate(F32 deltatime) {};
 		//“ü—Í
 		virtual void ComponentProcessInput() {};
 

@@ -39,7 +39,7 @@ Actor::~Actor()
 /*処理   : 更新処理               */
 /*備考   : 無し                   */
 /**********************************/
-void Actor::AcotrUpdate(float deltaTime)
+void Actor::AcotrUpdate(F32 deltaTime)
 {
 	if (mState == EActive)
 	{
@@ -53,7 +53,7 @@ void Actor::AcotrUpdate(float deltaTime)
 /*処理   : 追加処理                                   */
 /*備考   : 無し                                       */
 /******************************************************/
-void Actor::UpdateComponents(float deltaTime)
+void Actor::UpdateComponents(F32 deltaTime)
 {
 
 	for (auto iter = mComponents.begin(); iter < mComponents.end(); iter++)

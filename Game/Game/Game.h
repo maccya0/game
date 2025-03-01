@@ -36,7 +36,7 @@ class Game
 
 		/* 入力関連 */
 		/* 更新関連 */
-		void UpdateActors(float deltaTime);
+		void UpdateActors(F32 deltaTime);
 		/* 出力関連 */
 
 		/* メンバー変数 */
